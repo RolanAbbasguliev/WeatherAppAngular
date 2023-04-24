@@ -3,7 +3,11 @@
     <div class="weather-short__search-container">
       <mat-icon aria-hidden="false" aria-label="Search icon" fontIcon="search">
       </mat-icon>
-      <input type="text" class="weather-short__search" placeholder="Search for place"/>
+      <input
+        type="text"
+        class="weather-short__search"
+        placeholder="Search for place"
+      />
       <mat-icon
         aria-hidden="false"
         aria-label="Location icon"
@@ -13,7 +17,7 @@
     </div>
 
     <div class="weather-short__anim-frame"></div>
-    <h1 class="weather-short__tempreture">12<sup>°C</sup></h1>
+    <h1 class="weather-short__tempreture">{{ tempreture }}<sup>°C</sup></h1>
     <div class="weather-short__current-info">
       <p class="weather-short__place"></p>
       <p class="weather-short__date-info"></p>
