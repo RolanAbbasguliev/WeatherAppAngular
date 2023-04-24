@@ -1,0 +1,38 @@
+.weather-short__inner {
+  display: flex;
+  flex-direction: column;
+  max-width: 550px;
+
+  padding: 18px;
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 20px;
+
+  align-items: center;
+}
+
+.weather-short__search-container {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+  background-color: rgb(228, 228, 228);
+  border-radius: 20px;
+  padding: 7px 6px;
+  justify-content: space-between;
+}
+
+.weather-short__search {
+  border: none;
+  background-color: transparent;
+  width: 100%;
+  font-size: 16px;
+}
+
+.weather-short__search:focus {
+  outline: none;
+}
+
+.weather-short__tempreture {
+  font-size: 56px;
+  font-weight: 200;
+  margin-top: 12px;
+}
