@@ -1,4 +1,6 @@
 .weather-short__inner {
+  background-color: whitesmoke;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   max-width: 550px;
@@ -69,4 +71,12 @@
 .weather-short__anim-frame {
   margin-top: 12px;
   align-self: center;
+}
+
+.weather-short__tempreture-c {
+  font-size: 55px;
+}
+
+.weather-short__place {
+  font-weight: 800;
 }

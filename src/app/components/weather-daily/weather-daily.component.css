@@ -1,0 +1,6 @@
+.weather-daily {
+  display: flex;
+  gap: 20px;
+  background-color: aliceblue;
+  align-items: center;
+}

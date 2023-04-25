@@ -7,9 +7,10 @@
         type="text"
         class="weather-short__search"
         placeholder="Search for place"
-        #inputLocation
+        [(ngModel)]="locationInputText"
+        (change)="update()"
       />
-      <button (click)="enterLocation(inputLocation)">SEARCH</button>
+
       <mat-icon
         aria-hidden="false"
         aria-label="Location icon"
@@ -19,14 +20,19 @@
     </div>
 
     <div class="weather-short__anim-frame">
-      <img src="{{ weatherInfo.current.condition.icon }}" alt="WEATHER MOOD" />
+      <img
+        src="{{ weatherInfo.current.condition.icon }}"
+        width="150px"
+        alt="WEATHER MOOD"
+      />
     </div>
     <h1 class="weather-short__tempreture">
-      {{ weatherInfo.current.temp_c }}<sup>°C</sup>
+      {{ weatherInfo.current.temp_c
+      }}<sup class="weather-short__tempreture-c">°C</sup>
     </h1>
     <div class="weather-short__current-info">
       <p class="weather-short__place">
-        {{ weatherInfo.location.region }}
+        {{ weatherInfo.location.name }}
       </p>
       <p class="weather-short__date-info">
         {{ weatherInfo.location.localtime.toDateString().split(" ")[0] }},{{
