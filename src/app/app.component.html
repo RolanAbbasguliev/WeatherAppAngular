@@ -1,1 +1,1 @@
-<app-weather-short [weatherInfo]="weatherInfo$ | async"></app-weather-short>
+<app-weather-short [weatherInfo]="weatherInfo" (outLocation)="initLocation($event)"></app-weather-short>

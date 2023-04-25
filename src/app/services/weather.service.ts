@@ -9,9 +9,9 @@ import { IWeather } from '../models/weather';
 export class WeatherService {
   constructor(private http: HttpClient) {}
 
-  getAll(): Observable<IWeather> {
+  getWeatherByLocationName(location: string): Observable<IWeather> {
     return this.http.get<IWeather>(
-      'https://api.tomorrow.io/v4/timelines?location=40.75872069597532,-73.98529171943665&fields=temperature&timesteps=current&units=metric&apikey=jQ8ZlsPTkqD7GkDAPJr2J63myGf5bklW'
+      `http://api.weatherapi.com/v1/current.json?key=7ddee4b4456940b09e962342232504&q=${location}&aqi=no`
     );
   }
 }

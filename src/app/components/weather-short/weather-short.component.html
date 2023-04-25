@@ -7,7 +7,9 @@
         type="text"
         class="weather-short__search"
         placeholder="Search for place"
+        #inputLocation
       />
+      <button (click)="enterLocation(inputLocation)">SEARCH</button>
       <mat-icon
         aria-hidden="false"
         aria-label="Location icon"
@@ -16,13 +18,38 @@
       </mat-icon>
     </div>
 
-    <div class="weather-short__anim-frame"></div>
-    <h1 class="weather-short__tempreture">{{ tempreture }}<sup>°C</sup></h1>
-    <div class="weather-short__current-info">
-      <p class="weather-short__place"></p>
-      <p class="weather-short__date-info"></p>
+    <div class="weather-short__anim-frame">
+      <img src="{{ weatherInfo.current.condition.icon }}" alt="WEATHER MOOD" />
     </div>
-    <div class="weather-short__forecast-today"></div>
-    <div class="weather-short__place-timezone"></div>
+    <h1 class="weather-short__tempreture">
+      {{ weatherInfo.current.temp_c }}<sup>°C</sup>
+    </h1>
+    <div class="weather-short__current-info">
+      <p class="weather-short__place">
+        {{ weatherInfo.location.region }}
+      </p>
+      <p class="weather-short__date-info">
+        {{ weatherInfo.location.localtime.toDateString().split(" ")[0] }},{{
+          weatherInfo.location.localtime.toDateString().split(" ")[1]
+        }}
+        {{ weatherInfo.location.localtime.toDateString().split(" ")[2] }}
+      </p>
+    </div>
+    <div class="weather-short__forecast-today">
+      <mat-icon aria-hidden="false" aria-label="Cloud" fontIcon="cloud_queue">
+      </mat-icon>
+      {{ weatherInfo.current.condition.text }}
+    </div>
+    <div class="weather-short__place-timezone">
+      <mat-icon
+        aria-hidden="false"
+        aria-label="Time clock"
+        fontIcon="access_time"
+      >
+      </mat-icon>
+      {{ weatherInfo.location.localtime.getHours() }}:{{
+        weatherInfo.location.localtime.getUTCMinutes()
+      }}
+    </div>
   </div>
 </section>
