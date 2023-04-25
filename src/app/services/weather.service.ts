@@ -16,6 +16,8 @@ export class WeatherService {
   }
 
   getWeatherDailyByLocationName(location: string): Observable<IWeatherDaily> {
+    // return {} as Observable<IWeatherDaily>
+   
     return this.http.get<IWeatherDaily>(
       `https://api.tomorrow.io/v4/weather/forecast?location=${location}&timesteps=daily&apikey=YzL5HdKd4jxCgKnRfevS1vzPugn39Q5v`
    

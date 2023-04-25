@@ -9,12 +9,11 @@ import { IWeatherCard, IWeatherDaily } from '../../models/weather';
 export class WeatherDailyComponent implements OnInit {
   @Input() weatherInfoDaily: IWeatherDaily;
 
-  weatherCards: IWeatherCard[];
+  weatherCards = new Array<IWeatherCard>();
 
   initCards(): void {
-    
     for (let i = 0; i < this.weatherInfoDaily.timelines.daily.length; i++) {
-      let card!: IWeatherCard;
+      let card = {} as IWeatherCard;
 
       card.dayDate = this.weatherInfoDaily.timelines.daily[i].time;
       card.maxTemp =
@@ -27,8 +26,8 @@ export class WeatherDailyComponent implements OnInit {
   }
 
   ngOnInit(): void {
- 
-    this.initCards()
-    console.log('CARDS', this.weatherCards)
+    this.initCards();
+    console.log(this.weatherCards);
+    console.log(this.weatherInfoDaily);
   }
 }

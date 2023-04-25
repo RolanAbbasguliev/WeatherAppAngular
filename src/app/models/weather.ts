@@ -161,13 +161,12 @@ export interface IWeatherCard {
   maxTemp: number;
 }
 
-
 export interface IWeatherHightLights {
   uvIndex: number;
-  wind_kph: number,
-  sunriseTime: Date,
-  sunsetTime: Date
-  vis_km: number,
-  humidity: number,
+  wind_kph: number;
+  sunriseTime: Date;
+  sunsetTime: Date;
+  vis_km: number;
+  humidity: number;
   feelslike_c: number;
 }

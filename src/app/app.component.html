@@ -1,5 +1,6 @@
 <main class="main">
-  <app-weather-short
+  <div class="container">
+    <app-weather-short
     *ngIf="weatherInfoToday"
     [weatherInfo]="weatherInfoToday"
     (outLocation)="update($event)"
@@ -11,8 +12,10 @@
       
     ></app-weather-daily>
 
-    <!-- <app-weather-hightlights
+    <app-weather-hightlights
       [weatherHightlights]="weatherHightlights"
-    ></app-weather-hightlights> -->
+    ></app-weather-hightlights>
   </div>
+  </div>
+
 </main>
